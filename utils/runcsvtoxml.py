@@ -1,8 +1,9 @@
-from csvtometadata import transformcsv
-import os
+#!/usr/bin/env python
 
-csv_filepath = 'C:\\Data\\Metadata\\EGI_NGDS_PrelimGeothermalDataMetadata1.3.5_Task1709_20140206_EP_DL_done.csv'
-output_folder_path = 'C:\\Data\\Metadata\\Data_To_Process\\output'
+#from ..utils import transformcsv
+import os, sys
+import argparse
+
 
 # Don't mess with anything else below here
 #------------------------------------------------------------
@@ -12,6 +13,23 @@ def output_report(report, folder_path):
     f = open(report_path, 'w')
     f.write('\r\n'.join(report))
     f.close()
-    
-report = transformcsv(csv_filepath, output_folder_path)
-output_report(report, output_folder_path)
+
+
+def main(argv):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("csv_file", type=int,
+                        help="display a square of a given number")
+    parser.add_argument("output_folder_path",
+                        help="output_folder_path")
+    args = parser.parse_args()
+    report = transformcsv(args.csv_file, args.output_folder_path)
+    output_report(report, args.output_folder_path)
+
+if __name__ == "__main__":
+    if __package__ is None:
+        from os import sys, path
+        sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+        from utils import transformcsv
+    else:
+        from utils import transformcsv
+    main (sys.argv)
