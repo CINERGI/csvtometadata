@@ -17,8 +17,8 @@ def output_report(report, folder_path):
 
 def main(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument("csv_file", type=int,
-                        help="display a square of a given number")
+    parser.add_argument("csv_file",
+                        help="USGIN CSV file")
     parser.add_argument("output_folder_path",
                         help="output_folder_path")
     args = parser.parse_args()
