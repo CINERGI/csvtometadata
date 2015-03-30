@@ -1,10 +1,9 @@
 import unittest
 from lxml import etree
 from lxml.etree import XSLTParseError
-from constants import *
-from csvtometadata.utils.csvtoxml import *
-from csvtometadata import *
-from csvtometadata.utils.readcsv import *
+from tests.constants import *
+from utils.csvtoxml import *
+from utils.readcsv import *
 
 class CsvToXmlTests(unittest.TestCase):
     def setUp(self):

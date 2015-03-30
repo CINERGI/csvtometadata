@@ -1,6 +1,7 @@
+from __future__ import absolute_import
 import unittest
-from csvtometadata import *
-from constants import *
+from utils  import *
+from tests.constants import *
 
 class CsvToMetadataTests(unittest.TestCase):
     def setUp(self):

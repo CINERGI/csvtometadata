@@ -1,11 +1,11 @@
 import unittest, os, csv
 from lxml import etree
-from csvtometadata.utils.readcsv import *
-from csvtometadata.utils.validcsv.validvalues import *
-from csvtometadata.utils.validcsv.fieldchecks import *
-from csvtometadata.utils.validcsv.valuechecks import *
-from csvtometadata.utils.validcsv import validate
-from constants import *
+from utils.readcsv import *
+from utils.validcsv.validvalues import *
+from utils.validcsv.fieldchecks import *
+from utils.validcsv.valuechecks import *
+from utils.validcsv import validate
+from tests.constants import *
 
 class ValidatorTests(unittest.TestCase):
     def setUp(self):

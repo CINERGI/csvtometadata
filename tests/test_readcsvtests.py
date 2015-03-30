@@ -1,7 +1,7 @@
 import unittest, os, csv
 from lxml import etree
-from csvtometadata.utils.readcsv import *
-from constants import *
+from utils.readcsv import *
+from tests.constants import *
 
 class ReaderTests(unittest.TestCase):
     def setUp(self):

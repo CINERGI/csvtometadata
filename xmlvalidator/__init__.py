@@ -1,12 +1,9 @@
-import os, uuid, glob, urllib2, csv
-from StringIO import StringIO
-from lxml import etree
 from xmlvalidator import *
 from utils.validcsv import validate, validate_fields, validate_row
 from utils.readcsv import csv_to_dict_reader
 from utils.writecsv import new_csv_file
-from utils.csvtoxml import transform_valid_csv, CURRENT_XSLT_PATH, transform_valid_row
-from usginrules import UsginMinRules as minimum_rules
+from utils.csvtoxml import transform_valid_row
+from utils.rules.usginrules import UsginMinRules as minimum_rules
 
 '''
 rule_string = urllib2.urlopen('http://services.usgin.org/validation/ruleset/1/list/').read()
@@ -20,7 +17,7 @@ def get_usgin_rules():
         exec rule_string
         return UsginMinRules()
     except:
-        from usginrules import UsginMinRules
+        from utils.rules.usginrules import UsginMinRules
         return UsginMinRules()
 
 minimum_rules = get_usgin_rules()
