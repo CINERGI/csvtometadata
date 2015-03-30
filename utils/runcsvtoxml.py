@@ -17,10 +17,13 @@ def output_report(report, folder_path):
 
 def main(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument("csv_file", type=int,
-                        help="display a square of a given number")
+    parser.a
+    parser.add_argument("csv_file",
+                        help="USGIN CSV file")
     parser.add_argument("output_folder_path",
                         help="output_folder_path")
+    parser.add_argument("defaults?",
+                        help="yaml file with default fields")
     args = parser.parse_args()
     report = transformcsv(args.csv_file, args.output_folder_path)
     output_report(report, args.output_folder_path)
